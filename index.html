@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirection vers mon portfolio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 100px;
+      background: #f0f0f0;
+      color: #333;
+    }
+    .message {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+    .countdown {
+      font-weight: bold;
+      color: #007bff;
+    }
+  </style>
+  <script>
+    const delay = 2; // secondes
+    let countdown = delay;
+
+    function updateCountdown() {
+      document.getElementById("seconds").textContent = countdown;
+      if (countdown === 0) {
+        // Redirection automatique
+        window.location.href = "https://ton-portfolio.com";
+      } else {
+        countdown--;
+        setTimeout(updateCountdown, 1000);
+      }
+    }
+
+    window.onload = updateCountdown;
+  </script>
+</head>
+<body>
+  <div class="message">
+    Vous allez être redirigé vers mon portfolio dans <span id="seconds">2</span> secondes.
+  </div>
+  <div>
+    Si la redirection ne fonctionne pas, <a href="https://ton-portfolio.com">cliquez ici</a>.
+  </div>
+</body>
+</html>
